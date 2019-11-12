@@ -1,0 +1,32 @@
+@main("Programming Languages Search") {
+    <div class="container" ng-controller="SearchController as search">
+        <div id="search-pane">
+            <div class="header" class="row">
+                <h1>Programming Languages Search</h1>
+                <p class="lead">Search programming languages by language name, authors and keywords</p>
+            </div>
+
+            <div id="search-bar" class="row">
+                <form ng-submit="search.doSearch();">
+                    <span class="col-md-8 col-md-offset-2">
+                        <input id="query" type="text" class="form-control" placeholder="e.g. Scripting" ng-model="search.query" ng-change="search.doSearch()">
+                    </span>
+                </form>
+            </div>
+
+
+            <p ng-show="search.results.length > 0">Showing {{search.results.length}} results:</p>
+            <p ng-show="search.results.length == 0">Nothing found for: {{search.query}}</p>
+
+            <ul class="unstyled">
+                <li ng-repeat="result in search.results">
+                    <p>
+                        <strong>{{result['Name']}}</strong> by {{result['Designed by']}} <br />
+                        {{result['Type']}}
+                    </p>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+}

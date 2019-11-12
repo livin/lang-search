@@ -1,0 +1,16 @@
+body {
+    padding-top: 50px;
+}
+
+#search-pane {
+    padding: 20px;
+}
+
+#search-bar {
+    padding-bottom: 30px;
+}
+
+#search-pane .header {
+    padding-bottom: 40px;
+    text-align: center;
+}
